@@ -1,4 +1,4 @@
-#Vedic Math
+**Vedic Math
 --
 
 Originated from ancient India
