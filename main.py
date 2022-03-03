@@ -48,31 +48,47 @@ class Math:
         self.set_snum_arr(arr)
         return self
 
-    def len_of_fnum_arr(self):
+    def get_len_of_fnum_arr(self):
         return len(self.get_fnum_arr())
 
-    def len_of_snum_arr(self):
+    def get_len_of_snum_arr(self):
         return len(self.get_snum_arr())
 
     def check_same_lenght(self):
-        return self.len_of_fnum_arr() == self.len_of_snum_arr()
+        return self.get_len_of_fnum_arr() == self.get_len_of_snum_arr()
+
+    def which_longer(self):
+        if self.get_len_of_fnum_arr() > self.get_len_of_snum_arr():
+          return "first one"
+        return "second one"
+
+    def fill_with_zero(self):
+        if self.get_len_of_fnum_arr() == 0 or self.get_len_of_snum_arr() == 0:
+          return "I can not work with zeros"
+        len_of_fnum = self.get_len_of_fnum_arr()
+        len_of_snum = self.get_len_of_snum_arr()
+        if self.which_longer() == "first one":
+          difference = len_of_fnum - len_of_snum
+          for i in range(difference):
+            tmp_arr = self.get_snum_arr()
+            tmp_arr = ["0"] + tmp_arr
+            self.set_snum_arr(tmp_arr)
+        else:
+          difference = len_of_snum - len_of_fnum
+          for i in range(difference):
+            tmp_arr = self.get_fnum_arr()
+            tmp_arr = ["0"] + tmp_arr
+            self.set_fnum_arr(tmp_arr)
+        return self
+          
         
-      
+
+  
+m = Math(2, 34)
         
         
     
   
     
         
-
-
-        
-        
-        
-    
-  
-    
-        
-
-
 
