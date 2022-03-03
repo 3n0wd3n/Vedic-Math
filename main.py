@@ -131,12 +131,6 @@ class Math:
                 result = tmp_result + result
           return result      
         return "can not apply method multiplication --> not same order"
-
-          
-
-          
-        
-
   
 m = Math(2, 34)
 print("Get fnumber", m.get_fnumber())
@@ -158,8 +152,8 @@ m.fill_with_zero()
 print("Get fnumber array", m.get_fnum_arr())
 print("Get snumber array", m.get_snum_arr())
 print("Checking if they are same lenghth =", m.check_same_lenght())
-print(m.multiplication())
-        
+#print("Multiplication of " + str(m.get_fnumber()) + " and " + str(m.get_snumber()) + " acording to VEDIC MATHS is", m.multiplication())
+print("Multiplication of {0} and {1} according to Vedic Math is {2}." .format(m.get_fnumber(), m.get_snumber(), m.multiplication()))
         
     
   
