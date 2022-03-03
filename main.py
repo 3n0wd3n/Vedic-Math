@@ -1,5 +1,5 @@
 class Math:
-    
+
     def __init__(self, first_number, second_number):
         self.fnumber = first_number
         self.snumber = second_number
@@ -101,8 +101,9 @@ class Math:
                 tmp_result = fnum * snum
                 tmp_result = list(str(tmp_result))
                 if len(tmp_result) > 1:
-                  store = tmp_result[0]
-                  result = tmp_result[1] + result
+                  store = "".join(tmp_result[0:len(tmp_result)-1])
+                  tmp_result = tmp_result[len(tmp_result)-1:]
+                  result = tmp_result[0] + result
                 else:
                   result = tmp_result[0] + result
               if i == 2:
@@ -116,8 +117,9 @@ class Math:
                   tmp_result = fnum_1 * snum_0 + fnum_0 * snum_1
                 tmp_result = list(str(tmp_result))
                 if len(tmp_result) > 1:
-                  store = tmp_result[0]
-                  result = tmp_result[1] + result
+                  store = "".join(tmp_result[0:len(tmp_result)-1])
+                  tmp_result = tmp_result[len(tmp_result)-1:]
+                  result = tmp_result[0] + result
                 else:
                   result = tmp_result[0] + result
               if i == 1:
@@ -132,11 +134,11 @@ class Math:
           return result      
         return "can not apply method multiplication --> not same order"
   
-m = Math(2, 34)
+m = Math(2, 88)
 print("Get fnumber", m.get_fnumber())
 print("Get snumber", m.get_snumber())
 print("Setting fnumber")
-m.set_fnumber(3)
+m.set_fnumber(76)
 print("Get fnumber", m.get_fnumber())
 print("Get fnumber array", m.get_fnum_arr())
 print("Get snumber array", m.get_snum_arr())
