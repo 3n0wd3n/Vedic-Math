@@ -80,11 +80,85 @@ class Math:
             tmp_arr = ["0"] + tmp_arr
             self.set_fnum_arr(tmp_arr)
         return self
+
+    def get_order(self):
+        if not self.check_same_lenght():
+          return "not same order"
+        return self.get_len_of_fnum_arr()
+
+    def multiplication(self):
+        order = self.get_order()
+        if not order == "not same order":
+          if order == 2:
+            fnum_arr = self.get_fnum_arr()
+            snum_arr = self.get_snum_arr()
+            store = ""
+            result = ""
+            for i in range(3, 0, -1):
+              if i == 3:
+                fnum = int(fnum_arr[1])
+                snum = int(snum_arr[1])
+                tmp_result = fnum * snum
+                tmp_result = list(str(tmp_result))
+                if len(tmp_result) > 1:
+                  store = tmp_result[0]
+                  result = tmp_result[1] + result
+                else:
+                  result = tmp_result[0] + result
+              if i == 2:
+                fnum_1 = int(fnum_arr[1])
+                fnum_0 = int(fnum_arr[0])
+                snum_1 = int(snum_arr[1])
+                snum_0 = int(snum_arr[0])
+                if store:
+                  tmp_result = fnum_1 * snum_0 + fnum_0 * snum_1 + int(store)
+                else:
+                  tmp_result = fnum_1 * snum_0 + fnum_0 * snum_1
+                tmp_result = list(str(tmp_result))
+                if len(tmp_result) > 1:
+                  store = tmp_result[0]
+                  result = tmp_result[1] + result
+                else:
+                  result = tmp_result[0] + result
+              if i == 1:
+                fnum = int(fnum_arr[0])
+                snum = int(snum_arr[0])
+                if store:
+                  tmp_result = fnum * snum + int(store)
+                else:
+                  tmp_result = fnum * snum
+                tmp_result = str(tmp_result)
+                result = tmp_result + result
+          return result      
+        return "can not apply method multiplication --> not same order"
+
+          
+
           
         
 
   
 m = Math(2, 34)
+print("Get fnumber", m.get_fnumber())
+print("Get snumber", m.get_snumber())
+print("Setting fnumber")
+m.set_fnumber(3)
+print("Get fnumber", m.get_fnumber())
+print("Get fnumber array", m.get_fnum_arr())
+print("Get snumber array", m.get_snum_arr())
+print("Setting fnumber array and snumber array")
+m.fnumber_to_arr()
+m.snumber_to_arr()
+print("Get fnumber array", m.get_fnum_arr())
+print("Get snumber array", m.get_snum_arr())
+print("Checking if they are same lenghth =", m.check_same_lenght())
+print("Checking which is longer =", m.which_longer())
+print("Filling with zero")
+m.fill_with_zero()
+print("Get fnumber array", m.get_fnum_arr())
+print("Get snumber array", m.get_snum_arr())
+print("Checking if they are same lenghth =", m.check_same_lenght())
+print(m.multiplication())
         
         
     
