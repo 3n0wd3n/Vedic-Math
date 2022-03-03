@@ -42,11 +42,30 @@ class Math:
         return self
 
     def snumber_to_arr(self):
-          snum = self.get_snumber()
-          snum = str(snum)
-          arr = list(snum)
-          self.set_snum_arr(arr)
-          return self
+        snum = self.get_snumber()
+        snum = str(snum)
+        arr = list(snum)
+        self.set_snum_arr(arr)
+        return self
+
+    def len_of_fnum_arr(self):
+        return len(self.get_fnum_arr())
+
+    def len_of_snum_arr(self):
+        return len(self.get_snum_arr())
+
+    def check_same_lenght(self):
+        return self.len_of_fnum_arr() == self.len_of_snum_arr()
+        
+      
+        
+        
+    
+  
+    
+        
+
+
         
         
         
