@@ -1,2 +1,2 @@
-# vedic_maths
+**Vedic Math**
 Originated from ancient India
