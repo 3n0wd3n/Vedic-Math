@@ -86,6 +86,7 @@ class Math:
           return "not same order"
         return self.get_len_of_fnum_arr()
 
+    #multiplication is done just for numbers with 3 digits max
     def multiplication(self):
         order = self.get_order()
         if not order == "not same order":
